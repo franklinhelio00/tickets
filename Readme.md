@@ -1,8 +1,11 @@
+Hero Tickets
+
 # Backend
-1ª Criar evento
-2º Buscar eventos por localização
-3º Buscar eventos por categoria
-4º Buscar eventos por nome
-5º Buscar eventos por ID
-6º Inserir usuario no evento
-7º Quando inserir um usuario, validar se ele exite ou não
+
+- [ ]  criar evento
+- [ ]  buscar evento por localização
+- [ ]  Buscar eventos por categoria
+- [ ]  Buscar eventos por nome
+- [ ]  buscar evento por id
+- [ ]  Inserir usuario no evento
+- [ ]  Quando inserir o usuario, validar se ele existe ou não existe

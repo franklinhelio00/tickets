@@ -1,7 +1,4 @@
-class User{
-    constructor(public name: string, public email: string){
-
-    }
+class User {
+  constructor(public name: string, public email: string) {}
 }
-
-export {User};
+export { User };

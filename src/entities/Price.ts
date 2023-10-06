@@ -1,7 +1,5 @@
-class Price{
-    constructor(public amount: string, public sector: string){
-
-    }
+class Price {
+  constructor(public amount: string, public sector: string) {}
 }
 
-export {Price}
+export { Price };
