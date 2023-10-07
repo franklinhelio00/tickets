@@ -22,7 +22,7 @@ class App{
 
     }
     
-    initializeRoutes(){
+    private initializeRoutes(){
         /* `this.app.use('/events', this.EventRoutes.router);` is setting up a middleware in the
         Express application to handle requests with the path '/events'. It uses the router defined
         in the `eventRoutes` class (`this.EventRoutes.router`) to handle the requests. This means
@@ -31,14 +31,14 @@ class App{
         this.app.use('/events', this.EventRoutes.router);
     }
 
-    interceptionErros(){
+    private interceptionErros(){
         /* `this.app.use(errorMiddleware)` is setting up a middleware in the Express application to
         handle errors. The `errorMiddleware` function is defined in the
         `middlewares/error.middlewares` file. */
         this.app.use(errorMiddleware)
     }
 
-    middlewaresInitialize(){
+    private middlewaresInitialize(){
         /* `this.app.use(express.json());` is setting up the middleware to parse incoming requests with
         JSON payloads. It allows the application to handle JSON data sent in the request body. */
         this.app.use(express.json());

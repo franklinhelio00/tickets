@@ -13,6 +13,7 @@ is defined with a specific type and a public access modifier. */
         public date: Date,
         public description: string,
         public banner: string,
+        public flyers: string[],
         public cupons: string[],
         public participantes: User[],
         public price: Price[],
