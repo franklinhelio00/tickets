@@ -2,6 +2,7 @@
 import mongoose from "mongoose"
 import { Event } from "../entities/Event";
 import { EventRepository } from "./EventRepository";
+import { Location } from "../entities/Location";
 
 /* The `eventSchema` variable is creating a schema for events using Mongoose. It defines the structure
 and data types for each field in an event document. */
@@ -38,6 +39,21 @@ class EventRepositoryMongoose implements EventRepository{
         const eventModel = new EventModel(event)
         await eventModel.save();
         return event;
+    }
+
+    async findByLocationAndDate(location: Location, date: Date): Promise<Event | undefined>{
+        const findEvent = await EventModel.findOne({location, date}).exec()
+        return findEvent ? findEvent.toObject() : undefined;
+    }
+    async findEventsByCity(city: string): Promise<Event[]> {
+        const findEvent = await EventModel.find({city}).exec()
+
+        return findEvent.map((event) => event.toObject());        
+    }    
+    async findEventByCategory(categorias: string): Promise<Event[]> {
+        const findEvent = await EventModel.find({categorias}).exec()
+
+        return findEvent.map((event) => event.toObject());        
     }
 
 

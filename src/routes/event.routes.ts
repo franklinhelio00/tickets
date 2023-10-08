@@ -41,6 +41,9 @@ EventUseCase, and EventController classes, and then calling the initRoutes() met
     
     ]),
         this.eventController.create.bind(this.eventController));
+        this.router.get('/', this.eventController.findEventByLocation.bind(this.eventController),
+        );
+        this.router.get('/categorias/:categorias', this.eventController.findEventByCategory.bind(this.eventController))
     }
 }
 
