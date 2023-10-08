@@ -2,6 +2,10 @@ import axios from "axios";
 import { Event } from "../entities/Event";
 import { HttpException } from "../interfaces/HttpExceptions";
 import { EventRepository } from "../repositories/EventRepository";
+import dotenv from "dotenv";
+
+dotenv.config();
+const apiGoogle = process.env.API_GOOGLEMAPS;
 
 export interface IFilterProps {
     latitude: number;
@@ -101,7 +105,7 @@ repository or database. */
 
         try {
             const response = await axios.get(
-                `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyD0_zDVo_CqYAGY1Nxy1rW-ixYw0cDYEso`);
+                `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiGoogle}`);
                
                if(response.data.status == 'OK' && response.data.results.length > 0){
                 const address = response.data.results[0].address_components
